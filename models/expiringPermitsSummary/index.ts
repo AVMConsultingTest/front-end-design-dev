@@ -1,0 +1,1 @@
+export type ExpiringPermitsSummary = Record<string, number>;

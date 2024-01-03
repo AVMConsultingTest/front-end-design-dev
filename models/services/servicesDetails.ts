@@ -1,0 +1,31 @@
+export interface ServicesDetails {
+    id: number;
+    driver_id: number;
+    vendor_contact_number: string;
+    notes: string;
+    vendor_email_address: string;
+    repair_description: string;
+    repair_facility: string;
+    asset_id: string;
+    carrier_id: number;
+    repair_completion_date: string;
+    report_id: string;
+    vendor_id: string;
+    service_id: string;
+    asset_type: string;
+    repair_start_date: string;
+    invoice_id: string;
+    vehicle_id: number;
+    vehicle_type: string;
+    type: string;
+    vehicle_status: string;
+    vendor:string;
+    service_start_date?: Date|string;
+    service_order_id?: string;
+    vendor_address?: string;
+    dot_inspection_number?: string;
+    service_type?: string;
+    service_status?: string;
+    service_completion_date?: Date|string;
+    [x: string]:any;
+}

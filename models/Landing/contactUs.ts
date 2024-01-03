@@ -1,0 +1,13 @@
+import { SelectOption } from '../../components/ts/interfaces'
+
+export interface ContactUs {
+    firstName: string,
+    lastName: string,
+    email: string,
+    companyName: string,
+    companyType:number|string,
+    source: string,
+    phoneNumber: string,
+
+    companyTypeOptions: SelectOption[]
+}

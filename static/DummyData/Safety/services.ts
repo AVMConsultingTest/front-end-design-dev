@@ -1,0 +1,70 @@
+import { ServicesDetails } from '~/models/services/servicesDetails'
+
+const service:Array<ServicesDetails> = [
+  {
+    id: 1,
+    driver_id: 1,
+    asset_id: '1',
+    asset_type: 'Truck',
+    service_type: 'Ad Hoc',
+    vehicle_type: 'Ad Hoc',
+    vendor: 'Ad Hoc',
+    type: 'test',
+    vehicle_status: 'Ad Hoc',
+    services_status: 'Ad Hoc',
+    dot_inspection_number: '6BHVI0HCX2',
+    service_start_date: '05/02/2023',
+    service_completion_date: '06/06/2024',
+    repair_description: 'AC unit repair',
+    vendor_id: 'INO9034-2948',
+    vendor_address: '123 N Mill St, Orlando, FL',
+    vendor_contact_number: '(555) 421 - 1484',
+    vendor_email_address: 'vendor@abc.com',
+    service_order_id: 'Service ID 001',
+    invoice_id: '1',
+    approval_status: 'Completed',
+    notes: 'some notes',
+    carrier_id: 1,
+    repair_completion_date: '05/05/2025',
+    repair_facility: 'Facility',
+    repair_start_date: '05/05/2023',
+    report_id: '1',
+    service_id: '1',
+    vehicle_id: 1
+
+  },
+  {
+    id: 2,
+    driver_id: 2,
+    asset_id: '2',
+    asset_type: 'Truck',
+    service_type: 'Ad Hoc',
+    vehicle_type: 'Ad Hoc',
+    vendor: 'Ad Hoc',
+    type: 'test',
+    vehicle_status: 'Ad Hoc',
+    services_status: 'Ad Hoc',
+    dot_inspection_number: '6BHVI0HCX2',
+    service_start_date: '05/02/2023',
+    service_completion_date: '06/06/2024',
+    repair_description: 'AC unit repair',
+    vendor_id: 'INO9034-2948',
+    vendor_address: '123 N Mill St, Orlando, FL',
+    vendor_contact_number: '(555) 421 - 1484',
+    vendor_email_address: 'vendor@abc.com',
+    service_order_id: 'Service ID 001',
+    invoice_id: '1',
+    approval_status: 'Completed',
+    notes: 'some notes',
+    carrier_id: 1,
+    repair_completion_date: '05/05/2025',
+    repair_facility: 'Facility',
+    repair_start_date: '05/05/2023',
+    report_id: '2',
+    service_id: '2',
+    vehicle_id: 2
+
+  }
+]
+
+export default service

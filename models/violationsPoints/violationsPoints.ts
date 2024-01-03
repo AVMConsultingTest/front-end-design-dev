@@ -1,0 +1,42 @@
+export interface ViolationsPoints {
+    id: number;
+    vehicle_maintenance_7_days_falling: number;
+    crash_indicator_7_days_adding: number;
+    hm_compliance_7_days_adding: number;
+    hm_compliance_7_days_falling: number;
+    unsafe_driving_7_days_adding: number;
+    driver_fitness_7_days_falling: number;
+    driver_fitness_7_days_adding: number;
+    crash_indicator_7_days_falling: number;
+    carrier_id: number;
+    unsafe_driving_7_days_falling: number;
+    vehicle_maintenance_7_days_adding: number;
+    hos_compliance_7_days_falling: number;
+    updated_date: Date;
+    hos_compliance_7_days_adding: number;
+    substance_alcohol_7_days_adding: number;
+    substance_alcohol_7_days_falling: number;
+
+    unsafe_driving_falling?: number;
+    driver_fitness_falling?: number;
+    substance_alcohol_new?: number;
+    driver_fitness_new?: number;
+    substance_alcohol_impact?: boolean;
+    crash_indicator_new?: number;
+    unsafe_driving_impact?: boolean;
+    hos_compliance_falling?: number;
+    hm_compliance_falling?: number;
+    vehicle_maintenance_new?: number;
+    hos_compliance_impact?: boolean;
+    crash_indicator_impact?: boolean;
+    hos_compliance_new?: number;
+    driver_fitness_impact?: boolean;
+    crash_indicator_falling?: number;
+    hm_compliance_impact?: boolean;
+    substance_alcohol_falling?: number;
+    vehicle_maintenance_falling?: number;
+    vehicle_maintenance_impact?: boolean;
+    unsafe_driving_new?: number;
+    hm_compliance_new?: number;
+    [x: string]: any;
+}

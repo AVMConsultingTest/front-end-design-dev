@@ -1,0 +1,31 @@
+export interface CheckList {
+    id: number
+    binder: string
+    carrier_id: number
+    check_in_check_out: string
+    co_driver_id: number
+    co_driver_name: string
+    current_ct_permit: boolean
+    current_ky_permit: boolean
+    current_nm_permit: boolean
+    current_nv_permit: boolean
+    current_or_permit: boolean
+    current_registration: boolean
+    damage: boolean
+    damage_type: string
+    dot_number: string
+    fleet_representative_name: string
+    fuel_card: boolean
+    ifta_number: string
+    main_captain_name: string
+    main_driver_id: number
+    mileage: number
+    ny_number: string
+    plate_number: string
+    tablet_and_charger: boolean
+    unit_number: string
+    updated_date: string
+    uploaded_documents: number
+    valid_insurance: boolean
+    vin_number: string
+}

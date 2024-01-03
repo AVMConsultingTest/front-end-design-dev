@@ -1,0 +1,31 @@
+export interface PayrollMetricsSummary {
+  id: number
+  total_drivers_prev_month: number
+  company_driver_cost: number
+  total_revenue_prev_month: number
+  total_drivers_change_per: number
+  revenue_trucking_cost: number
+  total_revenue_change_per: number
+  carrier_id: number
+  revenue_company_driver_cost: number
+  leases: number
+  owner_operators: number
+  revenue_dispatch_cost: number
+  companies: number
+  total_trucking_cost_curr_month: number
+  trucking_cost: number
+  total_cost: number
+  total_trucking_cost_change_per: number
+  total_drivers_paystubs_curr_month: number
+  total_drivers_paystubs_change_per: number
+  total_revenue_curr_month: number
+  in_dispute_paystubs: number
+  total_drivers_curr_month: number
+  total_trucking_cost_prev_month: number
+  processing_paystubs: number
+  submitted_paystubs: number
+  paid_paystubs: number
+  dispatch_cost: number
+  updated_date: string
+  total_drivers_paystubs_prev_month: number
+}

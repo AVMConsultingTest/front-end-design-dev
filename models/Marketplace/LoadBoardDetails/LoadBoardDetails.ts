@@ -1,0 +1,37 @@
+export interface LoadBoardDetails {
+  id: number
+  carrier_status: string
+  miles: number
+  rate_per_mile: number
+  source: string
+  estimated_base_rate: number
+  estimated_duration_minutes: number
+  estimated_fuel_surcharge: number
+  estimated_total_payout: number
+  pickup_address_line1: string
+  pickup_address_line2: string
+  pickup_city: string
+  pickup_state: string
+  pickup_zip_code: string
+  pickup_date: string
+  drop_off_address_line1: string
+  drop_off_address_line2: string
+  drop_off_city: string
+  drop_off_state: string
+  drop_off_zip_code: string
+  drop_off_date: string
+  carrier_revenue: number
+  commodity_type: any
+  broker_status: string
+  loading_type: string
+  unloading_type: string
+  is_trailer_required: any
+  total_distance: any
+  customer_id: any
+  carrier_id: number
+  primary_driver_id: number
+  secondary_driver_id: number
+  broker_id: any
+  truck_id: number
+  trailer_id: number
+  }

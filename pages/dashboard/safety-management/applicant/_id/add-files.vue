@@ -1,0 +1,160 @@
+<template>
+  <div class="min-h-screen h-full">
+    <div class="transition-all pl-24 pr-28">
+      <div
+        class="flex flex-col justify-center items-start my-8"
+        style="flex: 0.5"
+      >
+        <h3 class="font-semibold mb-1 mt-4 text-center">
+          Add Files
+        </h3>
+      </div>
+      <Form ref="form" fclass="row my-2" @send="handleSubmit">
+        <div class="col-6 mb-2">
+          <m-select
+            v-model="request.document_category"
+            :bind-text="true"
+            :multiple="false"
+            :searchable="true"
+            :options="testOptionsDocumentCategory"
+            :addable="true"
+            name="state"
+            label="Document Category"
+          />
+        </div>
+        <div class="col-6 mb-2">
+          <m-select
+            v-model="request.document_type"
+            :bind-text="true"
+            :multiple="false"
+            :searchable="true"
+            :options="testOptionsDocumentType"
+            :addable="true"
+            name="state"
+            label="Document Type"
+          />
+        </div>
+        <div class="col-6 mb-6">
+          <FileInput label="Document Upload" name="logo" />
+        </div>
+
+        <div class="col-6 mb-6">
+          <Input
+            v-model="request.document_expire_date"
+            name="ExpireDate"
+            type="datetime-local"
+            hint="Please choose a date"
+            label="Expire Date"
+            rules="required"
+          />
+        </div>
+        <div class="row">
+          <div class="col-3 mt-10 ml-auto pt-40">
+            <Button
+              class="flex"
+              :type="ButtonTypeEnum.PRIMARY"
+              :size="SizeTypeEnum.LG"
+              :action="ActionTypeEnum.BUTTON"
+              @click="handleSubmit"
+            >
+            Save
+            </Button>
+          </div>
+        </div>
+      </Form>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue'
+// import { DriverDocument } from '@/models/driver/driverDocuments'
+import { mapActions } from 'vuex'
+import moment from 'moment'
+import { DocumentsDetails } from '@/models/documents/documentsDetails'
+import {
+  SizeTypeEnum,
+  ActionTypeEnum,
+  ButtonTypeEnum
+} from '@/components/ts/enums'
+import { SelectOption } from '@/components/ts/interfaces'
+
+export default Vue.extend({
+  name: 'ApplicantAddFiles',
+  layout: 'Dashboard',
+  data () {
+    return {
+      ButtonTypeEnum,
+      ActionTypeEnum,
+      SizeTypeEnum,
+      showDrawer: false,
+      request: {} as DocumentsDetails,
+      multiSelectedState: [],
+      testOptionsDocumentCategory: [
+        { id: 1, text: 'Financial', selected: false },
+        { id: 2, text: 'DQ', selected: false },
+        { id: 3, text: 'General', selected: false },
+        { id: 4, text: 'Policies/Constracts', selected: false },
+        { id: 5, text: 'Training', selected: false },
+        { id: 6, text: 'Reference', selected: false },
+        { id: 7, text: 'Inspections', selected: false },
+        { id: 8, text: 'Drug Test', selected: false },
+        {
+          id: 9,
+          text: 'TEST DOCUMENT CATEGORY',
+          selected: false
+        }
+      ] as SelectOption[],
+      testOptionsDocumentType: [
+        { id: 1, text: 'W9', selected: false },
+        { id: 2, text: 'Bank Account Info', selected: false },
+        { id: 3, text: 'MVR', selected: false },
+        { id: 4, text: 'CDL', selected: false },
+        { id: 5, text: 'PSP', selected: false },
+        { id: 6, text: 'DQ files types', selected: false },
+        { id: 7, text: 'Dot', selected: false },
+        { id: 8, text: 'Police', selected: false },
+        { id: 9, text: 'TEST DOCUMENT TYPE', selected: false }
+      ]
+    }
+  },
+  computed: {
+    states () {
+      console.log(this.$store.getters['common/states'])
+      return this.$store.getters['common/states']
+    },
+    carrierId (): number {
+      return this.$store.state.carrierId
+    }
+  },
+  mounted () {
+    this.getStates()
+  },
+  methods: {
+    ...mapActions({
+      getStates: action => action('common/getStates'),
+      addDocument: (action, params: Document) => action('documents/addDocument', params)
+    }),
+    handleSubmit () :void {
+      const rest = {
+        carrier_id: this.carrierId,
+        driver_id: 4,
+        document_upload_date: moment().toISOString(),
+        document_status: 'Pending'
+        // document_category: '',
+        // updated_date: '2023-01-11T09:00:47.168Z'
+        // document_expire_date: '2023-01-11T09:00:47.168Z',
+        // document_type: ''
+      }
+      console.log('Request is....: ' + this.request)
+      console.log(this.request.document_expire_date)
+
+      this.addDocument({ ...this.request, ...rest }).then(() => {
+        this.$emit('close-drawer')
+      })
+    }
+  }
+})
+</script>
+
+  <style scoped></style>
