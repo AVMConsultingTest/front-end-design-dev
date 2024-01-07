@@ -32,7 +32,7 @@
     "js-cookie": "^3.0.5",
     "maplibre-gl": "^2.4.0",
     "moment": "^2.29.4",
-    "nuxt": "^2.17.1",
+    "nuxt": "^3.9.1",
     "nuxt-compress": "^5.0.0",
     "nuxt-start": "^2.17.1",
     "tailwind-bootstrap-grid": "^5.0.1",
